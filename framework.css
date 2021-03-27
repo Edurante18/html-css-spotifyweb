@@ -16,74 +16,134 @@
 }
 
 @media screen and (max-width: 575px) {
-    nav:first-of-type>img#logo,
-    nav>ul:first-of-type>li>a,
-    nav>ul#playlist {
-        display: none;
-    }
-}
-
-@media screen and (max-width: 575px) {
-    nav:first-of-type {
+    nav#opzioni-spotify {
         width: 50px;
     }
 }
 
 @media screen and (max-width: 575px) {
-    nav>img#logo {
+    nav#opzioni-spotify>img#logo-small {
         display: inline-block;
     }
 }
 
 
+@media screen and (max-width: 575px) {
+    nav#opzioni-spotify>img#logo,
+    nav#opzioni-spotify>ul#cerca-brani>li>a:nth-of-type(2),
+    nav#opzioni-spotify>ul#playlist,
+    nav#opzioni-spotify>#profile a:nth-of-type(2),
+    nav#opzioni-spotify>#profile hr,
+    nav#opzioni-spotify>#profile strong {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    ul#cerca-brani>li>a>img.symbol:not(#home) {
+        margin-left: 10px;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    ul#cerca-brani>li>a>img.symbol#home {
+        margin-left: 6px;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .wrapper {
+    margin-left: 50px;
+    }
+}
+
 
 /* VISUALIZZAZIONE SM */
 
-@media screen and (min-width: 576px, max-width: 767px) {
+@media screen and (min-width: 576px) and (max-width: 767px) {
     .col-sm-6 {
         width: calc((100%/12)*6);
         padding: 10px;
       }
 }
 
-@media screen and (min-width: 576px, max-width: 767px) {
-    header>nav>img:nth-of-type(2) {
+@media screen and (min-width: 576px) and (max-width: 767px) {
+    nav>img:nth-of-type(2) {
         display: none
     }
 }
 
-@media screen and (min-width: 576px,  max-width: 767px) {
-        header>nav>img#logo-small {
+@media screen and (min-width: 576px) and (max-width: 767px) {
+    nav>img#logo-small {
         display: none
     }
 }
 
+@media screen and (min-width: 576px) and (max-width: 767px) {
+    ul#cerca-brani>li>a>img.symbol:not(#home) {
+        margin-left: 20px;
+    }
+}
 
+@media screen and (min-width: 576px) and (max-width: 767px) {
+    ul#cerca-brani>li>a>img.symbol#home {
+        margin-left: 16px;
+    }
+}
+
+@media screen and (min-width: 576px) and (max-width: 767px) {
+    .wrapper {
+    margin-left: 225px;
+    }
+}
 
 
 
 /* VISUALIZZAZIONE MD */
 
-@media screen and (min-width: 768px, max-width: 991px) {
+@media screen and (min-width: 768px) and (max-width: 991px) {
     .col-md-3 {
         width: calc((100%/12)*3);
         margin: auto;
         padding: 10px;
     }
-  }
+}
 
-@media screen and (min-width: 768px, max-width: 991px) {
-    header>nav>img#logo-small {
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    nav>img#logo-small {
         display: none
     }
 }
 
-@media screen and (min-width: 768px, max-width: 991px) {
-    header>nav>img#logo-small {
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    nav>img#logo-small {
         display: none
     }
 }
 
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    ul#cerca-brani>li>a>img.symbol {
+    margin-left: 20px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    ul#cerca-brani>li>a>img.symbol:not(#home) {
+        margin-left: 20px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    ul#cerca-brani>li>a>img.symbol#home {
+        margin-left: 16px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .wrapper {
+    margin-left: 225px;
+    }
+}
 
 /* VISUALIZZAZIONE LG */
 
@@ -104,15 +164,35 @@
 }
 
 @media screen and (min-width: 992px) {
-    header>nav>img#logo-small {
+    nav>img#logo-small {
         display: none
     }
 }
 
+@media screen and (min-width: 992px) {
+    ul#cerca-brani>li>a>img.symbol {
+    margin-left: 20px;
+    }
+}
 
 
+@media screen and (min-width: 992px) {
+    ul#cerca-brani>li>a>img.symbol:not(#home) {
+        margin-left: 20px;
+    }
+}
 
+@media screen and (min-width: 992px) {
+    ul#cerca-brani>li>a>img.symbol#home {
+        margin-left: 16px;
+    }
+}
 
+@media screen and (min-width: 992px) {
+    .wrapper {
+    margin-left: 225px;
+    }
+}
 
 
 
