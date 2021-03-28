@@ -1,17 +1,25 @@
-/* VISUALIZZAZIONE XS*/
-  
-@media screen and (max-width: 575px) {
-    .row {
-      width: 100%;
-      margin: 0;
-    }
+.row {
+    width: 100%;
+    margin: 0;
 }
+
+
+
+
+
+
+
+/* VISUALIZZAZIONE XS*/
   
 @media screen and (max-width: 575px) {
     .col-xs-6 {
       width: calc((100%/12)*6);
-      padding: 10px;
-    
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .col-xs-12 {
+      width: calc((100%/12)*12);
     }
 }
 
@@ -26,7 +34,6 @@
         display: inline-block;
     }
 }
-
 
 @media screen and (max-width: 575px) {
     nav#opzioni-spotify>img#logo,
@@ -58,17 +65,23 @@
 }
 
 
+
+
+
+
+
+
+
 /* VISUALIZZAZIONE SM */
 
 @media screen and (min-width: 576px) and (max-width: 767px) {
     .col-sm-6 {
         width: calc((100%/12)*6);
-        padding: 10px;
       }
 }
 
 @media screen and (min-width: 576px) and (max-width: 767px) {
-    nav>img:nth-of-type(2) {
+    nav>img#logo-small {
         display: none
     }
 }
@@ -96,6 +109,11 @@
     margin-left: 225px;
     }
 }
+
+
+
+
+
 
 
 
@@ -104,26 +122,12 @@
 @media screen and (min-width: 768px) and (max-width: 991px) {
     .col-md-3 {
         width: calc((100%/12)*3);
-        margin: auto;
-        padding: 10px;
     }
 }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
     nav>img#logo-small {
         display: none
-    }
-}
-
-@media screen and (min-width: 768px) and (max-width: 991px) {
-    nav>img#logo-small {
-        display: none
-    }
-}
-
-@media screen and (min-width: 768px) and (max-width: 991px) {
-    ul#cerca-brani>li>a>img.symbol {
-    margin-left: 20px;
     }
 }
 
@@ -132,6 +136,7 @@
         margin-left: 20px;
     }
 }
+
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
     ul#cerca-brani>li>a>img.symbol#home {
@@ -145,20 +150,31 @@
     }
 }
 
-/* VISUALIZZAZIONE LG */
-
-@media screen and (min-width: 992px) {
-    .row {
-        width: 100%;
-        height: fit-content;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 100px;
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    #in-evidenza h4 {
+        font-size: 11px;
     }
 }
 
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    #in-evidenza p {
+        font-size: 10px;
+    }
+}
+
+
+
+
+
+
+
+
+
+/* VISUALIZZAZIONE LG */
+
 @media screen and (min-width: 992px) {
-    .col-lg-2 {
+    .col-lg-2, .col-lg-offset-2 {
         width: calc((100%/12)*2);
     }
 }
@@ -169,12 +185,6 @@
     }
 }
 
-@media screen and (min-width: 992px) {
-    ul#cerca-brani>li>a>img.symbol {
-    margin-left: 20px;
-    }
-}
-
 
 @media screen and (min-width: 992px) {
     ul#cerca-brani>li>a>img.symbol:not(#home) {
@@ -194,8 +204,14 @@
     }
 }
 
+@media screen and (min-width: 992px) {
+    #in-evidenza .info>h4 {
+        font-size: 13px;
+    }
+}
 
-
-
-
- 
+@media screen and (min-width: 992px) {
+    #in-evidenza .info>p {
+        font-size: 10px;
+    }
+}

@@ -162,7 +162,9 @@ nav#suddivisione-brani>ul{
 
 #suddivisione-brani>ul>li {
     font-size: 12px;
-    margin: 15px;
+    margin-top: 15px;
+    margin-bottom: 30px;
+    margin-right: 15px;
     display: inline-block;
     vertical-align: top;
 }
@@ -180,39 +182,70 @@ nav#suddivisione-brani>ul{
     text-align: center 
 }
 
-
-
 #in-evidenza {
     float: left;
     height: calc(100vh - 160px);
     width: 100%; 
 }
 
-section>div {
-    float: left;
-}
-
-section>div>div {
-    float: left;
-    vertical-align: top;
+#in-evidenza .row {
     margin-left: 20px;
-    margin-right: 20px;
+    margin-bottom: 50px;
 }
 
-section>div>div>img {
+#in-evidenza .row,
+#in-evidenza .row>div {
+ float: left;
+}
+
+.album-and-info {
+    float: left;
+    margin-top: 25px;
+    padding-right: 10px;
+    margin-bottom: 30px;
+
+
+
+
+    border: 1px solid white;
+}
+
+
+
+
+.album-image>img {
+    position: relative;
     width: 100%;
 }
 
-main section>div>div>h4 {
-    line-height: 45px;
+.play>i {
+    font-size: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
-main section>div>div>p {
+.info {
+    width: 90%;
+    margin: auto;
+}
+
+.album-img#last {
+    margin-right: 40px;
+}
+
+#in-evidenza h4 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#in-evidenza p {
     font-size: 12px;
     color: #707070;
 }
 
-main>section.artisti img {
+#in-evidenza>.artisti img {
     border-radius: 50%;
 }
 
@@ -222,9 +255,56 @@ main>section.artisti img {
 
 
 
-#playbar {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#now-playing {
     height: 80px;
     width: 100%;
     background-color: #282828;
     position: fixed;
+}
+
+
+#now-playing #start {
+    float: left;
+}
+
+#now-playing #start img {
+    width: 50px;
+    margin: 15px 10px;
+    vertical-align: middle;
+}
+
+#now-playing #end {
+    float: right;
+}
+
+
+
+
+
+
+.clearfix::after {
+    display: table;
+    content: "";
+    clear: both;
 }
