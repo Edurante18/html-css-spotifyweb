@@ -222,13 +222,16 @@ nav#suddivisione-brani>ul{
     z-index: 0;
 }
 
-
-
 .album-image>img {
     width: 100%;
     height: auto;
     z-index: 0;
 }
+
+
+
+
+
 
 .overlay {
     position: absolute;
@@ -252,7 +255,7 @@ nav#suddivisione-brani>ul{
     color: white;
 }
 
-.play i:hover {
+.play:hover i{
     color: white;
 }
 
