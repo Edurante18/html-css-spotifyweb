@@ -156,13 +156,17 @@
     }
 }
 
-
 @media screen and (min-width: 768px) and (max-width: 991px) {
     #in-evidenza p {
         font-size: 10px;
     }
 }
 
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .album-and-info {
+        min-height: 300px;
+    }
+}
 
 
 
@@ -206,7 +210,7 @@
 
 @media screen and (min-width: 992px) {
     #in-evidenza .info>h4 {
-        font-size: 13px;
+        font-size: 12px;
     }
 }
 
@@ -215,3 +219,10 @@
         font-size: 10px;
     }
 }
+
+@media screen and (min-width: 992px) {
+    .album-and-info {
+        min-height: 22.5vh;
+    }
+}
+
