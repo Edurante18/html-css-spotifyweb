@@ -37,26 +37,25 @@
                 </li>
             </ul>
     
-    
+            <div id="playlist-container">
+                <ul id="playlist">
+                    <li><h4>PLAYLIST</h4></li>
+                    <li>
+                        <span>
+                            <a href="" id="più"><i class="fa fa-plus" aria-hidden="true"></i></a>
+                        </span>
+                        <a href="">Crea Playlist</a>
+                    </li>
+                    <li><a href="">Nome Playlist</a></li>
+                    <li><a href="">Nome Playlist</a></li>
+                    <li><a href="">Nome Playlist</a></li>
+                    <li><a href="">Nome Playlist</a></li>
+                    <li><a href="">Nome Playlist</a></li>
+                    <li><a href="">Nome Playlist</a></li>
+                    <li><a href="">Nome Playlist</a></li>
+                </ul>
+            </div>
 
-            <ul id="playlist">
-                <li><h4>PLAYLIST</h4></li>
-                <li>
-                    <span>
-                        <a href="" id="più"><i class="fa fa-plus" aria-hidden="true"></i></a>
-                    </span>
-                    <a href="">Crea Playlist</a>
-                </li>
-                <li><a href="">Nome Playlist</a></li>
-                <li><a href="">Nome Playlist</a></li>
-                <li><a href="">Nome Playlist</a></li>
-                <li><a href="">Nome Playlist</a></li>
-                <li><a href="">Nome Playlist</a></li>
-                <li><a href="">Nome Playlist</a></li>
-                <li><a href="">Nome Playlist</a></li>
-            </ul>
-
-    
             <div id="profile">
                 <div>
                     <a href=""><i class="fa fa-arrow-circle-o-down" aria-hidden="true"></i></a>
@@ -69,9 +68,9 @@
         </nav>
 
         <div id="blue-bar">
-            <span>
+            <div>
                 <a href="">EFFETTUA L'UPGRADE</a> 
-            </span>
+            </div>
         </div>
 
         <div class="wrapper">
@@ -90,10 +89,11 @@
             </nav>
 
             <section id="in-evidenza">
-                <section class="recently-played">
-                    <div class="row clearfix">
+                <section id="recently-played">
+                    
+                    <h2>Recently played</h2>
 
-                        <h2>Recently played</h2>
+                    <div class="row">
 
                         <div class="col-xs-6 col-sm-6 col-md-3 col-lg-2">
 
@@ -127,7 +127,7 @@
 
                                 <div class="info">
                                     <h4>Stranger Things, Vol. 1 (a Netflix Original Series Soundtrack)</h4>
-                                <p>Kyle Dixon -and- Michael Stein</p>
+                                <p>Kyle Dixon & Michael Stein</p>
                                 </div>
                             </div>
                         </div>
@@ -213,12 +213,12 @@
                     </div>
                 </section>
 
-                <section class="creato-per-J.D.">
-                
-                    <div class="row clearfix">  
-                        
-                        <h2>Creato per John Doe</h2>
-                        <p>Più ascolti, più assicurati saranno i suggerimenti.</p>
+                <section id="creato-per-JD">
+                                        
+                    <h2>Creato per John Doe</h2>
+                    <p>Più ascolti, più assicurati saranno i suggerimenti.</p>
+
+                    <div class="row">  
 
                         <div class="col-xs-6 col-sm-6 col-md-3 col-lg-2">
 
@@ -259,12 +259,12 @@
             
                 </section>
             
-                <section class="artisti">
+                <section id="artisti">
             
-                    <div class="row clearfix">
-
-                        <h2>Artisti più popolari</h2>
-                        <p>Più ascolti, più assicurati saranno i suggerimenti.</p>
+                    <h2>Artisti più popolari</h2>
+                    <p>Più ascolti, più assicurati saranno i suggerimenti.</p>
+                    
+                    <div class="row">
             
                         <div class="col-xs-6 col-sm-6 col-md-3 col-lg-2">
 
@@ -284,6 +284,7 @@
                         </div>
                         
                         <div class="col-xs-6 col-sm-6 col-md-3 col-lg-2">
+
                             <div class="album-and-info">
                                 
                                 <div class="album-image">
@@ -293,12 +294,13 @@
                                         <div class= "play"><a href=""><i class="fa fa-play-circle-o" aria-hidden="true"></i>
                                         </a>
                                         </div>
-                                    </div>
-
-                                    <div class="info">
-                                        <h4>Ludovico Einaudi</h4>
-                                    </div>
+                                    </div> 
                                 </div>
+
+                                <div class="info">
+                                    <h4>Ludovico Einaudi</h4>
+                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -311,97 +313,89 @@
 
     <section id="now-playing">
 
-        <!-- <div>
-            <div id="start">
-                    <img src="img/sinister.jpeg" alt="">
-                  
-                    <a href="" class="icon">
+        <div id="left">
+
+            <div>
+                <img src="img/sinister.jpeg" alt="">
+                
+                <div class="song-info">
+                    <h4>Sinister</h4>
+                    <a href="">Brano name</a>
+                </div>
+
+                <div class="icons">
+                    <a href="">
                         <i class="fa fa-heart-o" aria-hidden="true"></i>
                     </a>
 
-                    <a href="" class="icon">
+                    <a href="">
                         <i class="fa fa-folder-o" aria-hidden="true"></i>
-                    </a>
-            </div> 
-
-
-
-            <div id="center">
-
-                <div id="music-buttons-container">
-                    <span class="music-button">
-                        <a href="">
-                            <i class="fa fa-random" aria-hidden="true"></i>
-                        </a>
-                    </span>
-
-                    <span class="music-button">
-                        <a href="">
-                            <i class="fa fa-step-backward" aria-hidden="true">
-                            </i>
-                        </a>
-                    </span>
-
-                    <span class="music-button" id="play-button">
-                        <a href="">
-                            <i class="fa fa-play-circle-o" aria-hidden="true"></i>
-                        </a>
-                    </span>
-
-                    <span class="music-button">
-                        <a href="">
-                            <i class="fa fa-step-forward" aria-hidden="true"></i>
-                        </a>
-                    </span>
-
-                    <span class="music-button">
-                        <a href="">
-                            <i class="fa fa-repeat" aria-hidden="true"></i>
-                        </a>
-                    </span>
-                </div>
-               
-                <div id="playbar">
-                    <span>0:25</span>
-                    <hr class="full" id="played">
-                    <hr class="empty" id="played">
-                    <span>4:55</span>
+                    </a> 
                 </div>
 
             </div>
 
-            <div id="end">
-                <span>
+        </div> 
+
+        <div id="center">
+             <div id="music-buttons">
+           
                     <a href="">
-                        <i class="fa fa-ellipsis-v" aria-hidden="true">
+                        <i class="fa fa-random" aria-hidden="true"></i>
+                    </a>
+                
+                    <a href="">
+                        <i class="fa fa-step-backward" aria-hidden="true">
                         </i>
-
-                        <i class="fa fa-bars" aria-hidden="true"></i></a>
-                    </span>
-
-                <span>
-                    <a href="">
-                        <i class="fa fa-desktop" aria-hidden="true"></i>
                     </a>
-                </span>
-                    
-                <span>
-                    <a href="">
-                        <i class="fa fa-volume-up" aria-hidden="true"></i>
+                
+                    <a href=""  id="play-button">
+                        <i class="fa fa-play-circle-o" aria-hidden="true"></i>
                     </a>
-                </span>
+                
+                    <a href="">
+                        <i class="fa fa-step-forward" aria-hidden="true"></i>
+                    </a>
+               
+                    <a href="">
+                        <i class="fa fa-repeat" aria-hidden="true"></i>
+                    </a>
 
-                <span id="volume-bar">
-                    <hr class="full" id="volume-down">
-                    <hr class="empty" id="volume-up">  
-                </span>
+            </div>
+            
+            <div id="playbar">
+                <p>0:25</p>
+                <hr class="full" id="played"> <span id="round"></span>
+                <hr class="empty" id="played">
+                <p>4:55</p>
+            </div>
+        </div>
+
+        <div id="right">
+    
+            <div id="volume-buttons"> 
+                <a href="">
+                    <i class="fa fa-list-ul" aria-hidden="true"></i>
+                </a>
+
+                <a href="">
+                    <i class="fa fa-desktop" aria-hidden="true"></i>
+                </a>
+
+                <a href="">
+                    <i class="fa fa-volume-up" aria-hidden="true"></i>
+                </a>
             </div>
 
-        
-        </div> -->
+            <span id="volume-bar">
+                <hr class="full" id="volume-down">
+                <span id="round"></span>
+                <hr class="empty" id="volume-up">  
+            </span>
+            
+        </div>
 
     </section>
-
 
 </body>
 </html>

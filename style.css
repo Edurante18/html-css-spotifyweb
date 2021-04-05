@@ -18,11 +18,14 @@ main {
     overflow-y: scroll;
 }
 
+/* SIDEBAR */
+
 nav#opzioni-spotify {
     background-color: black;
-    width: 225px;
+    width: 210px;
     height: calc(100vh - 80px);
-    float: left;
+    display: flex;
+    flex-direction: column;
     position: fixed;
 }
 
@@ -40,11 +43,11 @@ ul {
     list-style: none;
 }
 
-nav#opzioni-spotify>ul#cerca-brani {
+nav#opzioni-spotify ul#cerca-brani {
     margin-bottom: 10px;
 }
 
-nav#opzioni-spotify>ul#cerca-brani>li,
+nav#opzioni-spotify ul#cerca-brani>li,
 nav#opzioni-spotify ul#playlist {
     line-height: 35px;
     font-size: 13px;
@@ -72,13 +75,22 @@ nav#opzioni-spotify>ul#cerca-brani>li:first-of-type a{
     color: white;
 }
 
-nav#opzioni-spotify ul#playlist {
-    padding-left: 20px;
-/* overflow-y: scroll; */
+#playlist-container {
+    flex-grow: 1;
+    overflow-y: auto;
+
 }
 
-nav#opzioni-spotify ul#playlist>li>h4 {
+nav#opzioni-spotify ul#playlist {
+    padding-left: 20px;
+}
+
+ul#playlist>li>h4 {
     color: white;
+}
+
+ul#playlist>li:nth-of-type(2) {
+    margin-bottom: 10px;
 }
 
 ul#playlist>li #più {
@@ -90,15 +102,9 @@ ul#playlist>li #più {
     font-size: large;
 }
 
-nav#opzioni-spotify ul#playlist>li:nth-of-type(2) {
-    margin-bottom: 10px;
-}
-
 nav#opzioni-spotify>#profile {
-    position: absolute;
-    bottom: 0;
-    padding-top: 15px;
-    padding-bottom: 10px;
+    justify-self: flex-end;
+    padding: 15px 0 10px 0;
     width: 100%;
     background-color: black;
 }
@@ -138,20 +144,26 @@ nav#opzioni-spotify>#profile>div {
     background-color: #707070;
     vertical-align: middle;
     border-radius: 50%;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin: 0 10px 0 10px;
+}
+
+/* "MUSIC" */
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
 }
 
 #blue-bar {
     background-color: #080B12;   
     height: 80px;
     width: 100%;
-    line-height: 80px;
-    text-align: end;
-    float: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
 }
 
-#blue-bar>span>a {
+#blue-bar>div>a {
     color: white;
     margin-right: 10px;
     font-size: 12px;
@@ -161,60 +173,71 @@ nav#opzioni-spotify>#profile>div {
     padding: 10px 30px;
 }
 
-nav#suddivisione-brani>ul{
-    text-align: center;
+#blue-bar>div>a:hover {
+    padding: 13px 33px;
+    border-radius: 30px;
+}
+
+nav#suddivisione-brani ul{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     margin: 20px;
 }
 
-#suddivisione-brani>ul>li {
+#suddivisione-brani ul>li {
     font-size: 12px;
-    margin-top: 15px;
-    margin-bottom: 30px;
-    margin-right: 15px;
-    display: inline-block;
-    vertical-align: top;
+    font-weight: bold;
+    padding: 15px 7.5px 25px 7.5px;
 }
 
-#suddivisione-brani>ul>li:first-of-type>div {
+#suddivisione-brani ul>li:first-of-type>div {
     margin-top: 5px;
 }
 
-#suddivisione-brani>ul>li hr {
+#suddivisione-brani ul>li hr {
     width: 30px;
     height: 2px;
     margin: auto;
     background-color: #ADFF2F;
     border: none;
-    text-align: center 
 }
 
 #in-evidenza {
-    float: left;
-    height: calc(100vh - 160px);
     width: 100%; 
+    height: calc(100vh - 160px);
+    display: flex;
+    flex-direction: column;
+}
+
+#in-evidenza>section {
+    margin-bottom: 70px;
+    padding-left: 15px;
+}
+
+#in-evidenza p {
+    color: #707070;
+}
+
+#in-evidenza>section>p {
+    margin-top: 10px;
+    font-size: 14px;
 }
 
 #in-evidenza .row {
-    width: 98%;
-    padding-left: 1.3%;
-    padding-right: 0.7%;
-    margin-bottom: 50px;
-    float: left;
-}
-
-#in-evidenza .row>div {
-    float: left;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .album-and-info {
-    float: left;
-    margin-top: 25px;
-    margin-right: 10px;
-    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    margin: 20px 15px 0 0;
 }
 
 .album-image {
     position: relative;
+    justify-content: center;
     top: 0;
     left: 0;
 }
@@ -222,17 +245,21 @@ nav#suddivisione-brani>ul{
 .album-image>img {
     width: 100%;
     height: 100%;
-    /* object-fit: contain; */
 }
 
 .overlay {
     position: absolute;
     top: 0;
     left: 0;
-    background-color: transparent;
     z-index: 2;
     width: 100%;
     height: 100%;
+    background-color: transparent;
+}
+
+#artisti img,
+#artisti .overlay {
+    border-radius: 50%;
 }
 
 .overlay:hover {
@@ -261,149 +288,185 @@ nav#suddivisione-brani>ul{
 }
 
 .info {
-    width: 90%;
-    margin: auto;
+    width: 100%;
     text-align: center;
 }
 
-#in-evidenza h4 {
-    margin-top: 10px;
-    margin-bottom: 10px;
+.info h4 {
+    margin: 10px 0 10px 0;
+    font-size: 90%;
 }
 
-#in-evidenza p {
-    font-size: 12px;
-    color: #707070;
+.info p {
+    font-size: 75%;
 }
 
-.artisti img {
-    border-radius: 50%;
-}
+
+/* PLAYBAR CONTAINER */
 
 #now-playing {
     height: 80px;
     width: 100%;
     background-color: #282828;
     position: fixed;
+    display: flex;
 }
 
-
-/* 
-#now-playing>div {
-    width: 100%;
-    height: 100%;
+#now-playing #left{
+    height: 100%;  
+    flex-basis: 33%;
+    padding-left: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 }
 
-#now-playing #start {
-    float: left;
-    width: 15%;
+#now-playing #left>div {
+    display: flex;
+    align-items: center;
 }
 
-#start img {
-    width: 40px;
-    margin: 15px;  
-    vertical-align: middle;
+#left img {
+    height: 45px;
+    width: auto;
 }
 
-#start div#song-info{
-    display: inline;
+#left .icons {
+    flex-wrap: wrap;
 }
 
-#start>p>strong {
-    color:white
-}
-
-.icon {
+#left .icons a {
+    color: #707070;
     margin-left: 7.5px;
+}
+
+#left .song-info {
+    padding-left: 10px;
+    padding-right: 20px;
+}
+
+.song-info h4 {
+    font-size: 13px;
+}
+
+.song-info a {
+    font-size: 12px;
+    color: #707070;
+}
+
+.song-info a:hover {
+    text-decoration: underline;
 }
 
 #now-playing #center {
-    float: left;
-    width: 70%;
     height: 100%;
-
+    flex-basis: 33%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-#playbar, #volume-bar {
-    display: inline;
-    vertical-align: middle;
-    height: 50%;
-    border: 1px solid green;
+#music-buttons,
+#volume-buttons {
+    display: flex;
+    align-items: center;
 }
 
-#playbar {
-    width: 20vw;
-    margin: auto;
-    border: 1px color green;
+#music-buttons a,
+#volume-buttons a {
+    color: white;
 }
 
-#volume-bar {
-    width: 10%;
-}
-
-#playbar span{
-    font-size: 11px;
-    vertical-align: middle;
-    padding-left: 15px;
-    padding-right: 15px;
-    margin: auto;
-}
-
-#music-button-container {
-    height: min-content;
-    width: 60%;
-    border: 1px solid green;
-    margin: auto;
-}
-
-.music-button {
-    margin-right: 7.5px;
-    margin-left: 7.5px;
-    vertical-align: middle;
+#music-buttons a {
+    margin: 7.5px 10px 7.5px 10px;
 }
 
 #play-button {
-    font-size: 27.5px;
+    font-size: 35px;
+    padding: 0 5px 0 5px;
 }
 
-hr.full{
+#center p {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+#playbar, #volume-bar {
+    display: flex;
+    flex-direction: row;
+    justify-self: flex-end;
+}
+
+#playbar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+}
+
+hr.full, hr.empty {
     height: 3.5px;
-    width: 10%;
     border: none;
+}
+
+hr.full {
+    width: 20%;
     background-color: #C1C1C1;
-    display: inline-block;
-    margin-right: -8px;
-    vertical-align: middle;
+
 }
 
 hr.empty {
-    height: 3.5px;
-    width: 90%;
-    border: none;
+    width: 80%;
     background-color: #5B5B5B;
-    display: inline-block;
-    vertical-align: middle;
 }
 
-#now-playing #end {
-    float: left;
-    width: 15%;
-    line-height: 80px;
-    margin-right: 0;
+#playbar:hover hr.full,
+#volume-bar:hover hr.full {
+    background-color: #ADFF2F;
 }
 
-#end>span {
-    color: white;
-    padding-left: 5px;
-    padding-right: 5px;
+#playbar #round,
+#volume-bar #round {
+    border-radius: 50%;
+    background-color: white;
+    display: none;
 }
 
+#playbar #round {
+    height: 15px;
+    width: 17.5px;
+}
 
+#playbar:hover #round,
+#volume-bar:hover #round {
+    display: flex;
+}
 
+#now-playing #right{
+    flex-basis: 33%;
+    height: 100%;  
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
 
+#volume-buttons {
+    display: flex;
+    flex-wrap: nowrap;
+}
 
-.clearfix::after {
-    display: table;
-    content: "";
-    clear: both;
-} */
+#volume-buttons a {
+    margin: 0 7.5px 0 7.5px;
+}
+
+#volume-bar {
+    width: 140px;
+    padding: 0 3px 0 3px;
+    display: flex;
+    align-items: center;
+}
+
+#volume-bar #round {
+    height: 12.5px;
+    width: 15px;
+}

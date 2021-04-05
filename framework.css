@@ -27,11 +27,17 @@
 @media screen and (max-width: 575px) {
     nav#opzioni-spotify>img#logo,
     nav#opzioni-spotify>ul#cerca-brani>li>a:nth-of-type(2),
-    nav#opzioni-spotify>ul#playlist,
+    nav#opzioni-spotify>#playlist-container,
     nav#opzioni-spotify>#profile a:nth-of-type(2),
     nav#opzioni-spotify>#profile hr,
     nav#opzioni-spotify>#profile strong {
         display: none;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    ul#cerca-brani {
+        flex-grow: 1;
     }
 }
 
@@ -88,7 +94,7 @@
 
 @media screen and (min-width: 576px) and (max-width: 767px) {
     .wrapper {
-    margin-left: 225px;
+        margin-left: 210px;
     }
 }
 
@@ -129,25 +135,7 @@
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
     .wrapper {
-    margin-left: 225px;
-    }
-}
-
-@media screen and (min-width: 768px) and (max-width: 991px) {
-    #in-evidenza h4 {
-        font-size: 11px;
-    }
-}
-
-@media screen and (min-width: 768px) and (max-width: 991px) {
-    #in-evidenza p {
-        font-size: 10px;
-    }
-}
-
-@media screen and (min-width: 768px) and (max-width: 991px) {
-    .album-and-info {
-        min-height: 300px;
+    margin-left: 210px;
     }
 }
 
@@ -189,25 +177,7 @@
 
 @media screen and (min-width: 992px) {
     .wrapper {
-    margin-left: 225px;
-    }
-}
-
-@media screen and (min-width: 992px) {
-    #in-evidenza .info>h4 {
-        font-size: 14px;
-    }
-}
-
-@media screen and (min-width: 992px) {
-    #in-evidenza .info>p {
-        font-size: 12px;
-    }
-}
-
-@media screen and (min-width: 992px) {
-    .album-and-info {
-        min-height: 22.5vh;
+    margin-left: 210px;
     }
 }
 
@@ -220,30 +190,9 @@
 
 
 
+/* VISUALIZZAZIONE PER ALTEZZA INFERIORE AI 565PX */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@media screen and (max-height: 680px) {
+@media screen and (max-height: 565px) {
     #profile {
         display: none;
     }
