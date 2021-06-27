@@ -1,7 +1,7 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: bor
+    box-sizing: border-box
 }
 
 body {
@@ -11,6 +11,8 @@ body {
     height: 100vh;
 }
 
+/****** WEB PAGE WITHOUT PLAYBAR ******/
+
 main {
     width: 100%;
     height: calc(100vh - 80px);
@@ -18,7 +20,7 @@ main {
     overflow-y: scroll;
 }
 
-/* SIDEBAR */
+/*** SIDEBAR ***/
 
 nav#opzioni-spotify {
     background-color: black;
@@ -75,10 +77,11 @@ nav#opzioni-spotify>ul#cerca-brani>li:first-of-type a{
     color: white;
 }
 
+/* PLAYLIST LIST */
+
 #playlist-container {
     flex-grow: 1;
     overflow-y: auto;
-
 }
 
 nav#opzioni-spotify ul#playlist {
@@ -101,6 +104,8 @@ ul#playlist>li #più {
     vertical-align: middle;
     font-size: large;
 }
+
+/* USER PROFILE OPTIONS */
 
 nav#opzioni-spotify>#profile {
     justify-self: flex-end;
@@ -147,12 +152,7 @@ nav#opzioni-spotify>#profile>div {
     margin: 0 10px 0 10px;
 }
 
-/* "MUSIC" */
-
-.wrapper {
-    display: flex;
-    flex-direction: column;
-}
+/**** UPGRADE TOP BAR ****/
 
 #blue-bar {
     background-color: #080B12;   
@@ -161,11 +161,12 @@ nav#opzioni-spotify>#profile>div {
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    overflow-x: hidden;
 }
 
 #blue-bar>div>a {
     color: white;
-    margin-right: 10px;
+    margin-right: 20px;
     font-size: 12px;
     background-color: transparent;
     border: 1px solid white;
@@ -173,10 +174,18 @@ nav#opzioni-spotify>#profile>div {
     padding: 10px 30px;
 }
 
-#blue-bar>div>a:hover {
-    padding: 13px 33px;
-    border-radius: 30px;
+#blue-bar>div:hover {
+    transform: scale(1.1);
 }
+
+/**** ALL THE MUSIC ****/
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+/* LISTA SEZIONI */
 
 nav#suddivisione-brani ul{
     display: flex;
@@ -202,6 +211,8 @@ nav#suddivisione-brani ul{
     background-color: #ADFF2F;
     border: none;
 }
+
+/** SEZIONE BRANI IN EVIDENZA **/
 
 #in-evidenza {
     width: 100%; 
@@ -302,7 +313,7 @@ nav#suddivisione-brani ul{
 }
 
 
-/* PLAYBAR CONTAINER */
+/****** PLAYBAR CONTAINER ******/
 
 #now-playing {
     height: 80px;
@@ -311,6 +322,8 @@ nav#suddivisione-brani ul{
     position: fixed;
     display: flex;
 }
+
+/* TRACK */
 
 #now-playing #left{
     height: 100%;  
@@ -329,10 +342,6 @@ nav#suddivisione-brani ul{
 #left img {
     height: 45px;
     width: auto;
-}
-
-#left .icons {
-    flex-wrap: wrap;
 }
 
 #left .icons a {
@@ -358,11 +367,14 @@ nav#suddivisione-brani ul{
     text-decoration: underline;
 }
 
+/* REPRODUCTION */
+
 #now-playing #center {
     height: 100%;
     flex-basis: 33%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
 }
 
@@ -391,55 +403,58 @@ nav#suddivisione-brani ul{
     padding-right: 15px;
 }
 
-#playbar, #volume-bar {
-    display: flex;
-    flex-direction: row;
-    justify-self: flex-end;
-}
-
 #playbar {
     width: 100%;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     font-size: 12px;
 }
 
-hr.full, hr.empty {
-    height: 3.5px;
-    border: none;
+#playbar .progress-bar {
+    height: 4px;
 }
 
-hr.full {
-    width: 20%;
-    background-color: #C1C1C1;
-
+.progress-bar {
+    width: 100%;
+    background-color: #707070;
+    border-radius: 30px;
 }
 
-hr.empty {
-    width: 80%;
-    background-color: #5B5B5B;
+.progress-bar .value{
+    height: 100%;
+    background-color: lightgrey;
+    border-radius: 30px;
+    position: relative;
 }
 
-#playbar:hover hr.full,
-#volume-bar:hover hr.full {
+#playbar .progress-bar .value{
+    width: 9%;
+}
+
+.progress-bar .value>.slider {
+    background-color: transparent;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translate(-50%, -50%)
+}
+
+#playbar .progress-bar .value>.slider {
+    height: 12.5px;
+    width: 12.5px;
+}
+
+#playbar:hover .progress-bar>.value,
+#volume-bar:hover .progress-bar>.value {
     background-color: #ADFF2F;
 }
 
-#playbar #round,
-#volume-bar #round {
-    border-radius: 50%;
+#playbar:hover .progress-bar>.value>.slider,
+#volume-bar:hover .progress-bar>.value>.slider {
     background-color: white;
-    display: none;
-}
 
-#playbar #round {
-    height: 15px;
-    width: 17.5px;
-}
-
-#playbar:hover #round,
-#volume-bar:hover #round {
-    display: flex;
 }
 
 #now-playing #right{
@@ -449,6 +464,8 @@ hr.empty {
     align-items: center;
     justify-content: flex-end;
 }
+
+/* VOLUME-BAR */
 
 #volume-buttons {
     display: flex;
@@ -460,13 +477,21 @@ hr.empty {
 }
 
 #volume-bar {
-    width: 140px;
+    width: 40%;
     padding: 0 3px 0 3px;
     display: flex;
     align-items: center;
 }
 
-#volume-bar #round {
-    height: 12.5px;
-    width: 15px;
+#volume-bar .progress-bar {
+    height: 3px;
+}
+
+#volume-bar .progress-bar .value{
+    width: 50%;
+}
+
+#volume-bar .progress-bar .value>.slider {
+    height: 10px;
+    width: 10px;
 }
